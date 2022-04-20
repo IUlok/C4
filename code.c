@@ -22,10 +22,11 @@ int main() {
       bubble(n, array);
       break;
       case 2:
-      //insert(n, array);
+      insert(n, array);
+      displayArray(n, array);
       break;
       case 3:
-      //qsort(n, array);
+      qsort(n, array);
       break;
       case 4:
       return 0;

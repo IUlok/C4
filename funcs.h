@@ -3,6 +3,8 @@
 
 int BubbleRecursion(int n, int array[]);
 int displayArray (int n, int array[]);
+int insert (int n, int array[]);
+int qsort (int n, int array[]);
 
 void bubble (int n, int array[]) {
   int bubble_menu;
@@ -30,11 +32,17 @@ void bubble (int n, int array[]) {
   }
 }
 
-void insert (int n, int array[]) {
-
+int insert (int n, int array[]) {
+  for(int i=1;i<n;i++) {
+  	for(int j=i;j>0 && array[j-1]>array[j];j--) {
+        int temp = array[j-1];
+        array[j-1] = array[j];
+        array[j] = temp;
+    }
+  }
 }
 
-void qsort (int n, int array[]) {
+int qsort (int n, int array[]) {
 
 }
 
