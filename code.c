@@ -13,18 +13,19 @@ int main() {
     printf("%s%d%s\t", "Array[", i, "]:");
     scanf("%d", &array[i]);
   }
+  displayArray(n, array);
   while (1) {
-    printf("%s", "Menu:\n1)\tBubble sort\n2)\tInsertion sort\n3)\tQSort\n4)\tExit\n");
+    printf("%s", "Menu:\n1)\tBubble sort\n2)\tInsertion sort\n3)\tQSort\n4)\tExit\nSet:\t");
     scanf("%d", &punct);
     switch(punct) {
       case 1:
-      bubble(array[n]);
+      bubble(n, array);
       break;
       case 2:
-      insert(array[n]);
+      //insert(n, array);
       break;
       case 3:
-      qsort(array[n]);
+      //qsort(n, array);
       break;
       case 4:
       return 0;
