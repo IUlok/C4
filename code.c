@@ -32,6 +32,9 @@ int main() {
         break;
       case 4:
         return 0;
+      default:
+        printf("%s", "Error: There is not this punct at menu\n");
+        break;
     }
   }
 }
