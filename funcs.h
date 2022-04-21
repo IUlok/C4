@@ -13,9 +13,13 @@ void bubble (int n, int *array) {
   scanf("%d", &bubble_menu);
   switch(bubble_menu) {
     case 1:
+      int count_of_comparisons=0;
+      int count_of_permutations=0;
       for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
+          count_of_comparisons++;
           if (*(array+i)<*(array+j)) {
+            count_of_permutations++;
             int temp = *(array+j);
             *(array+j)=*(array+i);
             *(array+i)=temp;
@@ -23,8 +27,11 @@ void bubble (int n, int *array) {
         }
       }
       displayArray(n, array);
+      printf("%s%d\n", "Count of comparisons is ", count_of_comparisons);
+      printf("%s%d\n", "Count of permutations is ", count_of_permutations);
       break;
     case 2:
+      int count_of_recursion_depth=0; // доделать
       for (int i=0;i<n;i++) {
         BubbleRecursion(n, array);
       }
