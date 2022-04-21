@@ -4,7 +4,7 @@
 int BubbleRecursion(int n, int array[]);
 int displayArray (int n, int array[]);
 int insert (int n, int array[]);
-int qsort (int n, int array[]);
+int comp(const int *, const int *);
 
 void bubble (int n, int array[]) {
   int bubble_menu;
@@ -14,7 +14,7 @@ void bubble (int n, int array[]) {
     case 1:
       for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
-          if (array[i]>array[j]) {
+          if (array[i]<array[j]) {
             int temp = array[j];
             array[j]=array[i];
             array[i]=temp;
@@ -42,13 +42,9 @@ int insert (int n, int array[]) {
   }
 }
 
-int qsort (int n, int array[]) {
-
-}
-
 int BubbleRecursion(int n, int array[]) {
   if(n!=1)  {
-    if (array[n-1]>array[n-2]) {
+    if (array[n-1]<array[n-2]) {
       int temp = array[n-2];
       array[n-2]=array[n-1];
       array[n-1]=temp;
@@ -65,4 +61,9 @@ int displayArray (int n, int array[]) {
     printf("%d\t", array[i]);
   }
   printf("\n");
+}
+
+int comp(const int *i, const int *j)
+{
+  return *i-*j;
 }

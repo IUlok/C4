@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <math.h>
 #include "funcs.h"
 
@@ -19,17 +20,18 @@ int main() {
     scanf("%d", &punct);
     switch(punct) {
       case 1:
-      bubble(n, array);
-      break;
+        bubble(n, array);
+        break;
       case 2:
-      insert(n, array);
-      displayArray(n, array);
-      break;
+        insert(n, array);
+        displayArray(n, array);
+        break;
       case 3:
-      qsort(n, array);
-      break;
+        qsort(array, n, sizeof (int), (int(*) (const void *, const void *)) comp);
+        displayArray(n, array);
+        break;
       case 4:
-      return 0;
+        return 0;
     }
   }
 }
