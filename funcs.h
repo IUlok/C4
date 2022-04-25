@@ -31,23 +31,31 @@ void bubble (int n, int *array) {
       printf("%s%d\n", "Count of permutations is ", count_of_permutations);
       break;
     case 2:
-      int count_of_recursion_depth=0; // доделать
+      int count_of_recursion_depth;
       for (int i=0;i<n;i++) {
         BubbleRecursion(n, array);
       }
+      count_of_recursion_depth = n-1;
+      printf("%s%d\n", "Count of recursion depth is ", count_of_recursion_depth);
       displayArray(n, array);
       break;
   }
 }
 
 int insert (int n, int *array) {
+  int count_of_comparisons=0;
+  int count_of_permutations=0;
   for(int i=1;i<n;i++) {
+    count_of_comparisons++;
   	for(int j=i;j>0 && *(array+j-1)>*(array+j);j--) {
+        count_of_permutations++;
         int temp = *(array+j-1);
         *(array+j-1) = *(array+j);
         *(array+j) = temp;
     }
   }
+  printf("%s%d\n", "Count of comparisons is ", count_of_comparisons);
+  printf("%s%d\n", "Count of permutations is ", count_of_permutations);
 }
 
 int BubbleRecursion(int n, int *array) {
